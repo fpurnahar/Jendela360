@@ -20,6 +20,7 @@
                   <table id="example1" class="table table-bordered table-striped">
                     <thead class="text-center">
                       <tr>
+                        <th>No</th>
                         <th>Nama Mobil</th>
                         <th>Harga Mobil</th>
                         <th>Stock</th>
@@ -27,8 +28,10 @@
                       </tr>
                     </thead>
                     <tbody class="text-center">
+                      <?php $no=1;?>
                       @foreach ($viewproduct as $item)
                         <tr>
+                          <td><?= $no++;?></td>
                           <td><?= $item['nama_mobil']?></td>
                           <td><?= $item['harga_mobil']?></td>
                           <td><?= $item['stock_mobil']?></td>
