@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\ProductContoller;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware('auth');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 
 /*
@@ -32,13 +38,13 @@ Route::get('/addproduct', function () {
 
 Route::get('/detailproduct', [ProductContoller::class, 'index'])->middleware('auth');
 
-Route::post('/create_product', [ProductContoller::class, 'create'])->middleware('auth');
+Route::post('/create_product', [ProductContoller::class, 'create']);
 
 Route::get('/edit_product{id}', [ProductContoller::class, 'edit'])->middleware('auth');
 
 Route::patch('/update_product{id}', [ProductContoller::class, 'update'])->middleware('auth');
 
-Route::delete('/destroy_product/{id}', [ProductContoller::class, 'destroy'])->middleware('auth');
+Route::delete('/destroy_product/{id}', [ProductContoller::class, 'destroy']);
 
 
 /*
@@ -50,11 +56,16 @@ Route::delete('/destroy_product/{id}', [ProductContoller::class, 'destroy'])->mi
 
 Route::get('/addpenjualan', function () {
     return view('page.penjualan.addpenjualan');
-});
-Route::get('/detailpenjualan', function () {
-    return view('page.penjualan.detailpenjualan');
-});
+})->middleware('auth');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/detailpenjualan', [PenjualanController::class, 'index'])->middleware('auth');
+
+Route::post('/create_penjualan', [PenjualanController::class, 'create']);
+
+Route::get('/edit_penjualan{id}', [PenjualanController::class, 'edit'])->middleware('auth');
+
+Route::patch('/update_penjualan{id}', [PenjualanController::class, 'update'])->middleware('auth');
+
+Route::delete('/destroy_penjualan/{id}', [PenjualanController::class, 'destroy']);
+
+// Route::get('/sendmail/{id}', [PenjualanController::class, 'sendMail']);

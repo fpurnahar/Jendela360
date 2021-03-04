@@ -41,7 +41,7 @@
             </div>
             <div class="form-group">
                 <label >Stoct Mobil</label>
-                    <input type="number" class="form-control" id="stock_moobil" name="stock_mobil" placeholder="Stoct Mobil">
+                    <input type="number" class="form-control" id="stock_mobil" name="stock_mobil" placeholder="Stoct Mobil">
             </div>
         </div>
         <div class="card-footer">

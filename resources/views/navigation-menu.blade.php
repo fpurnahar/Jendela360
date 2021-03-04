@@ -71,14 +71,14 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="/detailpenjualan" class="nav-link">
+                  <a href="/addpenjualan" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Add penjualan</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/addpenjualan" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                  <a href="/detailpenjualan" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
                     <p>Detail penjualan </p>
                   </a>
                 </li>
