@@ -8,7 +8,49 @@
 
 @section('content')
     
-    <h1>Edit Product</h1>
+    <div class="col-md-6">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">@yield('title')</h3>
+        </div>
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+    <form role="form" action="/update_product{{$editproduct->id}}" method="POST">
+        @csrf
+        @method('PATCH')
+        <div class="card-body">
+            <div class="form-group">
+                <label >Nama Mobil </label>
+                    <input type="text" class="form-control" value="{{$editproduct->nama_mobil}}" name="nama_mobil">
+            </div>
+            <div class="form-group">
+                <label >Harga Mobil</label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" value="{{$editproduct->harga_mobil}}" name="harga_mobil">
+                    <div class="input-group-append">
+                      <span class="input-group-text">.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label >Stoct Mobil</label>
+                    <input type="number" class="form-control"  value="{{$editproduct->stock_mobil}}" name="stock_mobil">
+            </div>
+        </div>
+        <div class="card-footer">
+            <a href="/detailproduct" class="btn btn-info ">Back</a>
+            <button type="submit" class="btn btn-primary float-right">Edit</button>
+        </div>
+    </form>
+    </div>
+</div>
 
 @endsection
 

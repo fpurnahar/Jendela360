@@ -38,5 +38,11 @@
           </a>
         </li>
       </ul>
+      <form method="POST" action="{{ route('logout') }}">
+      @csrf
+        <a class="btn btn-dark" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+          {{ __('Logout') }}
+        </a>
+      </form>
     </nav>
     <!-- /.navbar -->
