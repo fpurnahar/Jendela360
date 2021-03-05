@@ -34,7 +34,7 @@ class PenjualanController extends Controller
             'brand_mobil' => 'required',
         ]);
 
-        $addpenjualan = Mail::to('fadhil.purnahar@gmail.com')->send(new HelloMail());
+        // $addpenjualan = Mail::to('fadhil.purnahar@gmail.com')->send(new HelloMail());
         $addpenjualan = new PenjualanModel();
         $addpenjualan->nama = $request->nama;
         $addpenjualan->email = $request->email;
@@ -42,29 +42,7 @@ class PenjualanController extends Controller
         $addpenjualan->brand_mobil = $request->brand_mobil;
 
         $addpenjualan->save();
-        return redirect('/detailpenjualan')->with('success', 'Product Success Di Tambahkan & Invoice Berhasil dikirim');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect('/detailpenjualan')->with('success', 'Pembeli Success Di Tambahkan & Invoice Berhasil dikirim');
     }
 
     /**
@@ -114,15 +92,5 @@ class PenjualanController extends Controller
     {
         PenjualanModel::destroy($id);
         return back()->with('success', 'Data Berhasil Dihapus');
-    }
-
-    /**
-     * This Send Email voice.
-     *
-     * Use gunEmail
-     * @return Illuminate\Support\Facades\Mail
-     */
-    public function sendMail()
-    {
     }
 }

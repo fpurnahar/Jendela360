@@ -19,10 +19,24 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth');
 
+Route::get('/hasilpenjualan', function () {
+    return view('page.hasilpenjualan');
+})->middleware('auth');
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes Tambah Product
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('/hasilpenjualan', [ProductContoller::class, 'hasilPenjualan']);
 
 
 /*

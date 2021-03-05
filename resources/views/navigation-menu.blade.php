@@ -37,6 +37,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item ">
+              <a href="/hasilpenjualan" class="nav-link">
+                <i class="nav-icon fas fa-money-check-alt"></i>
+                <p>
+                  Statistic Penjualan
+                </p>
+              </a>
+            </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>

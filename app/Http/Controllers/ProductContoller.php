@@ -40,26 +40,10 @@ class ProductContoller extends Controller
         return redirect('/detailproduct')->with('success', 'Product Success Di Tambahkan');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function hasilPenjualan()
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        // 
+        $hasilpenjualan = ProductModel::get();
+        return view('page.hasilpenjualan', compact('hasilpenjualan'));
     }
 
     /**

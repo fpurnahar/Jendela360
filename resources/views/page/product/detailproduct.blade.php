@@ -33,7 +33,7 @@
                         <tr>
                           <td><?= $no++;?></td>
                           <td><?= $item['nama_mobil']?></td>
-                          <td><?= $item['harga_mobil']?></td>
+                          <td>Rp <?= number_format($item->harga_mobil,0, ',', '.')?></td>
                           <td><?= $item['stock_mobil']?></td>
                           <td class="project-actions">
                             <form action="/destroy_product/<?= $item['id']?>" method="POST">
